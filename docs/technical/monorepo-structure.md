@@ -2,7 +2,7 @@
 
 ```text
 apps/
-  mobile/
+  web/
   admin/
 
 packages/
@@ -29,7 +29,7 @@ docs/
 
 | Folder | Purpose |
 |---|---|
-| `apps/mobile` | Expo React Native app for Renter and Owner flows. |
+| `apps/web` | Next.js customer web app for Renter and Owner flows, with adaptive phone/tablet/desktop layouts. |
 | `apps/admin` | Separate Next.js dashboard for Admin / Opérateur / Operater users. |
 
 ## Packages

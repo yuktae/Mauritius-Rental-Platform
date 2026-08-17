@@ -5,8 +5,9 @@
   "packageManager": "pnpm@11.19.0",
   "scripts": {
     "dev": "pnpm -r --parallel dev",
-    "dev:mobile": "pnpm --filter @boro/mobile start",
+    "dev:web": "pnpm --filter @boro/web dev",
     "dev:admin": "pnpm --filter @boro/admin dev",
+    "build": "pnpm -r build",
     "lint": "pnpm -r lint",
     "typecheck": "pnpm -r typecheck",
     "test": "pnpm -r test",

@@ -1,6 +1,6 @@
 # BORO
 
-BORO is a rental platform monorepo with a mobile app for renters and owners, a separate admin/operator dashboard, shared TypeScript packages, and Supabase for database, auth, storage, and local development.
+BORO is a rental platform monorepo with a phone-first responsive web app for renters and owners, a separate admin/operator dashboard, shared TypeScript packages, and Supabase for database, auth, storage, and local development.
 
 ## Repository Target
 
@@ -33,7 +33,7 @@ Locked setup decisions:
 ## Structure
 
 ```text
-apps/mobile      Expo React Native app
+apps/web         Next.js customer web app for Renter and Owner flows
 apps/admin       Next.js admin/operator dashboard
 packages/ui      Shared design tokens and UI foundations
 packages/types   Shared roles, statuses, and domain types
@@ -52,8 +52,8 @@ Run these after the remaining CLIs are installed:
 pnpm install
 supabase start
 pnpm db:reset
-pnpm dev:mobile
+pnpm dev:web
 pnpm dev:admin
 ```
 
-Expo Go is enough for early preview. Expo development builds should become the main testing path once native dependencies and production-like auth/device behavior matter.
+BORO is a web platform. Use browser device tools for phone/tablet/desktop layout testing, and open the local network URL on a real phone for final touch checks.

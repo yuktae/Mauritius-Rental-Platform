@@ -8,12 +8,12 @@ This plan starts the BORO development workspace without building the full app ye
 - [x] Keep `C:\Users\yukta\OneDrive\Bureau\RENTAL SITE\docs` as the product/design/technical source of truth.
 - [x] Create the monorepo folder structure.
 - [x] Add root `pnpm` workspace config.
-- [x] Add mobile, admin, shared package, and Supabase skeletons.
-- [x] Install EAS CLI globally.
+- [x] Add web, admin, shared package, and Supabase skeletons.
+- [x] Remove Expo/mobile app direction after product pivot to responsive web.
 - [x] Install Supabase CLI as a BORO project dev dependency.
 - [x] Run `pnpm install`.
 - [x] Run local Supabase with Docker.
-- [x] Preview the mobile app with Expo Go.
+- [ ] Preview the web app in phone/tablet/desktop browser sizes.
 
 ## Do Next
 
@@ -29,14 +29,12 @@ This plan starts the BORO development workspace without building the full app ye
 - [ ] Build Renter homepage shell.
 - [ ] Build Owner homepage shell.
 - [ ] Build Admin dashboard shell.
-- [ ] Run BORO on a physical Android phone.
+- [ ] Run BORO in a physical phone browser.
 
 ## Do Later
 
 - [ ] Create `boro-staging` Supabase project.
 - [ ] Create `boro-production` Supabase project.
-- [ ] Set up EAS development builds.
-- [ ] Set up EAS internal preview builds.
 - [ ] Add production email provider after the BORO domain is purchased.
 - [ ] Add Sentry and analytics.
 - [ ] Add admin 2FA before launch.
@@ -58,12 +56,9 @@ Use separate Supabase projects first because this is simpler and safer. Supabase
 |---|---:|---|
 | GitHub account | Yes | Now |
 | Supabase account | Yes | Now |
-| Expo account | Yes | Now |
-| Apple Developer account | Yes | Later, before iOS TestFlight/App Store |
-| Google Play Console account | Yes | Later, before Play Store testing/release |
 | Domain for BORO | Yes | Before production email and public launch |
 | Email provider account | Yes | After domain purchase |
-| Vercel account | Recommended | Later, for admin dashboard hosting |
+| Vercel account | Recommended | Now, for preprod and production web hosting |
 | Sentry account | Recommended | Later, before beta |
 | Analytics account | Recommended | Later, before beta |
 | Stripe account | Later | Payments/deposits/payout phase |

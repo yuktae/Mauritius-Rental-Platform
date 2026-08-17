@@ -14,9 +14,7 @@
 | Tool | Why |
 |---|---|
 | Supabase CLI | Required for local Supabase, migrations, seed data, and generated database types. Install as a project dev dependency in BORO, not through `winget`. |
-| EAS CLI | Needed for Expo development builds and internal preview builds. |
-| Expo Go app on phone | Fast early mobile preview. |
-| Android Studio | Android emulator and Android device tooling. |
+| Vercel account | Recommended hosting for the Next.js customer app and admin dashboard. |
 
 ## Create Now
 
@@ -24,7 +22,7 @@
 |---|---|
 | GitHub account `yuktae` | Host BORO code, pull requests, and deployment connections. |
 | Supabase | Create local-linked projects, then staging and production projects. |
-| Expo | Run EAS builds, device previews, and internal builds. |
+| Vercel | Deploy preprod and production web environments. |
 
 ## GitHub Repository Target
 
@@ -41,7 +39,6 @@ Create this when GitHub is healthy again:
 
 | Account | Why |
 |---|---|
-| Vercel | Recommended first hosting option for the Next.js admin dashboard. |
 | Sentry | App and admin error monitoring before beta testing. |
 | Analytics provider | PostHog or Firebase Analytics for funnels and product usage. |
 
@@ -51,8 +48,6 @@ Create this when GitHub is healthy again:
 |---|---|
 | Domain registrar | Buy the BORO domain before production email setup. |
 | Email provider | Resend, Postmark, or SendGrid after the domain exists. |
-| Apple Developer | Required before iOS TestFlight and App Store release. |
-| Google Play Console | Required before Play Store internal testing and release. |
 | Stripe | Payments, deposit holds, refunds, and owner payouts in a later phase. |
 
 ## Not Needed Now
@@ -60,7 +55,7 @@ Create this when GitHub is healthy again:
 | Tool | Reason |
 |---|---|
 | EasyPanel | Only useful if BORO self-hosts services on a VPS later. |
-| Fly.io | Useful later for custom APIs/workers, but not required for the first Expo + Next.js + Supabase setup. |
+| Fly.io | Useful later for custom APIs, workers, queues, or services that need long-running server processes. Vercel is simpler for the first Next.js web deployments. |
 | Supabase branching | Useful later for PR previews; separate staging and production projects are better first. |
 
 ## Supabase CLI Install Method
