@@ -1,0 +1,21 @@
+{
+  "name": "@boro/validators",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "exports": {
+    ".": "./src/index.ts"
+  },
+  "scripts": {
+    "lint": "echo \"No validators lint configured yet\"",
+    "typecheck": "tsc --noEmit",
+    "test": "echo \"No validators tests configured yet\""
+  },
+  "dependencies": {
+    "@boro/types": "workspace:*",
+    "zod": "latest"
+  },
+  "devDependencies": {
+    "typescript": "^5.9.2"
+  }
+}

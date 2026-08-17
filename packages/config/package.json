@@ -1,0 +1,17 @@
+{
+  "name": "@boro/config",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "exports": {
+    ".": "./src/index.ts"
+  },
+  "scripts": {
+    "lint": "echo \"No config lint configured yet\"",
+    "typecheck": "tsc --noEmit",
+    "test": "echo \"No config tests configured yet\""
+  },
+  "devDependencies": {
+    "typescript": "^5.9.2"
+  }
+}

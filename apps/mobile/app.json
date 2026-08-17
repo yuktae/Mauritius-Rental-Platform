@@ -1,0 +1,24 @@
+{
+  "expo": {
+    "name": "BORO",
+    "slug": "boro",
+    "scheme": "boro",
+    "version": "0.1.0",
+    "orientation": "portrait",
+    "userInterfaceStyle": "light",
+    "assetBundlePatterns": ["**/*"],
+    "ios": {
+      "supportsTablet": true,
+      "bundleIdentifier": "app.boro.mobile"
+    },
+    "android": {
+      "package": "app.boro.mobile"
+    },
+    "plugins": ["expo-router"],
+    "extra": {
+      "router": {
+        "origin": false
+      }
+    }
+  }
+}

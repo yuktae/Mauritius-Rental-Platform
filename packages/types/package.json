@@ -1,0 +1,17 @@
+{
+  "name": "@boro/types",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "exports": {
+    ".": "./src/index.ts"
+  },
+  "scripts": {
+    "lint": "echo \"No types lint configured yet\"",
+    "typecheck": "tsc --noEmit",
+    "test": "echo \"No types tests configured yet\""
+  },
+  "devDependencies": {
+    "typescript": "^5.9.2"
+  }
+}

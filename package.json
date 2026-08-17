@@ -1,0 +1,24 @@
+{
+  "name": "mauritius-rental-platform",
+  "version": "0.1.0",
+  "private": true,
+  "packageManager": "pnpm@11.19.0",
+  "scripts": {
+    "dev": "pnpm -r --parallel dev",
+    "dev:mobile": "pnpm --filter @boro/mobile start",
+    "dev:admin": "pnpm --filter @boro/admin dev",
+    "lint": "pnpm -r lint",
+    "typecheck": "pnpm -r typecheck",
+    "test": "pnpm -r test",
+    "db:start": "supabase start",
+    "db:stop": "supabase stop",
+    "db:reset": "supabase db reset",
+    "db:migrate": "supabase migration up",
+    "db:types": "supabase gen types typescript --local > packages/database/src/supabase.types.ts"
+  },
+  "devDependencies": {
+    "supabase": "latest",
+    "turbo": "latest",
+    "typescript": "^5.9.2"
+  }
+}
