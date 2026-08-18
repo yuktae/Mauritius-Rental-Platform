@@ -81,6 +81,12 @@ importers:
       '@boro/ui':
         specifier: workspace:*
         version: link:../../packages/ui
+      '@boro/validators':
+        specifier: workspace:*
+        version: link:../../packages/validators
+      '@supabase/supabase-js':
+        specifier: 2.112.3
+        version: 2.112.3
       next:
         specifier: 16.3.1
         version: 16.3.1(@types/node@26.2.0)(react-dom@19.2.8(react@19.2.8))(react@19.2.8)

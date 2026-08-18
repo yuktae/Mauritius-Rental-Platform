@@ -1,11 +1,14 @@
 "use client";
 
-import { useId, type InputHTMLAttributes } from "react";
+import { useId, type ComponentPropsWithRef } from "react";
 
 import { cn } from "../cn";
 import { Field, controlClass, controlBorder, describedBy } from "./field";
 
-export type TextInputProps = Omit<InputHTMLAttributes<HTMLInputElement>, "id"> & {
+// ComponentPropsWithRef rather than InputHTMLAttributes so `ref` is part of
+// the props and reaches the input through the spread. Forms need it to move
+// focus to the field that failed.
+export type TextInputProps = Omit<ComponentPropsWithRef<"input">, "id"> & {
   label: string;
   hint?: string;
   error?: string;

@@ -1,12 +1,12 @@
 "use client";
 
-import { useId, useState, type InputHTMLAttributes, type KeyboardEvent } from "react";
+import { useId, useState, type ComponentPropsWithRef, type KeyboardEvent } from "react";
 
 import { cn } from "../cn";
 import { Field, controlClass, controlBorder, describedBy } from "./field";
 
 export type PasswordInputProps = Omit<
-  InputHTMLAttributes<HTMLInputElement>,
+  ComponentPropsWithRef<"input">,
   "id" | "type"
 > & {
   label: string;

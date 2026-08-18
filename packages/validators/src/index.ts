@@ -1,3 +1,5 @@
+export * from "./auth";
+
 import { z } from "zod";
 
 import { APP_ROLES } from "@boro/types";

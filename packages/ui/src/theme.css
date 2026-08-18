@@ -83,9 +83,11 @@
   --color-accent-soft: var(--color-brand-100);
 
   /* ------------------------------------------------------------------ type */
-  /* --font-inter is provided by next/font in each app layout. The stack after
-     it only applies while the face loads. */
-  --font-sans: var(--font-inter), ui-sans-serif, system-ui, -apple-system,
+  /* Plus Jakarta Sans, self-hosted by next/font in each app layout as
+     --font-boro. Geometric but humanist: warmer and rounder than Inter, with
+     heavy weights that carry a display headline without a second family. The
+     stack after it only applies while the face loads. */
+  --font-sans: var(--font-boro), ui-sans-serif, system-ui, -apple-system,
     "Segoe UI", Roboto, sans-serif;
 
   --text-display: 2.5rem;
