@@ -76,8 +76,10 @@
 
   /* The role accent. Renter and Owner share every token above and differ only
      here, so the difference stays a deliberate one-line decision rather than
-     two drifting themes. Defaults to brand until the Owner accent is chosen. */
+     two drifting themes. Renter is the brand itself. */
   --color-accent: var(--color-brand-500);
+  --color-accent-hover: var(--color-brand-600);
+  --color-accent-press: var(--color-brand-700);
   --color-accent-soft: var(--color-brand-100);
 
   /* ------------------------------------------------------------------ type */
@@ -109,13 +111,23 @@
 /*
  * Role surfaces.
  *
- * Set data-surface="owner" on a layout to shift the accent. Candidates are on
- * the /design page; both currently resolve to brand orange so nothing changes
- * until the choice is made.
+ * Set data-surface="owner" on a layout and the accent shifts to ink navy.
+ *
+ * Navy rather than teal, because teal already means "verified" on ID badges
+ * and QR handover, and an accent that also means a status stops the status
+ * reading as one. Navy rather than a darker orange, because that just looks
+ * like a muted brand button. It also gives the Owner side, which is a
+ * management surface rather than a shopping one, a calmer register, and it
+ * keeps the original style board's "navy for trust" intent without letting
+ * navy back in as a second neutral competing with the ink.
+ *
+ * Everything else stays identical between the two surfaces on purpose.
  */
 [data-surface="owner"] {
-  --color-accent: var(--color-brand-500);
-  --color-accent-soft: var(--color-brand-100);
+  --color-accent: #1b3a5c;
+  --color-accent-hover: #16304c;
+  --color-accent-press: #102437;
+  --color-accent-soft: #e7edf3;
 }
 
 /*

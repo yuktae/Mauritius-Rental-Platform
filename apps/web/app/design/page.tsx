@@ -108,12 +108,12 @@ export default function DesignTokensPage() {
 
       <section className="flex flex-col gap-4">
         <div className="flex flex-col gap-1.5">
-          <h2 className="text-title font-semibold">Owner accent, to decide</h2>
+          <h2 className="text-title font-semibold">Owner accent</h2>
           <p className="max-w-prose text-sm text-ink-muted">
-            Renter and Owner share every token and differ only in the accent, so
-            the distinction stays one line rather than two themes that drift.
-            All four are shown on a real button so the choice is made by looking,
-            not by reading a hex code.
+            Renter and Owner share every token and differ only in the accent,
+            so the distinction stays one line rather than two themes that drift.
+            Ink navy is the choice; the rejected options stay here because the
+            reasoning matters more than the result if this is revisited.
           </p>
         </div>
         <div className="grid gap-3 sm:grid-cols-2">
@@ -130,7 +130,14 @@ export default function DesignTokensPage() {
                 Book now
               </button>
               <div className="flex min-w-0 flex-col gap-0.5">
-                <span className="text-sm font-semibold">{candidate.step}</span>
+                <span className="flex flex-wrap items-center gap-2 text-sm font-semibold">
+                  {candidate.step}
+                  {candidate.chosen ? (
+                    <span className="rounded-control bg-trust-soft px-2 py-0.5 font-mono text-[0.6875rem] font-semibold uppercase tracking-wider text-trust">
+                      Chosen
+                    </span>
+                  ) : null}
+                </span>
                 <span className="font-mono text-xs tabular-nums text-ink-subtle">
                   {candidate.value}
                 </span>

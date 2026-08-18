@@ -32,6 +32,13 @@ enable_signup = true
 double_confirm_changes = true
 enable_confirmations = true
 
+# Phase 1 verifies with a six-digit code typed into the app, not a magic link,
+# so the confirmation template is overridden to render {{ .Token }}. Keep this in
+# step with the same template in the hosted projects.
+[auth.email.template.confirmation]
+subject = "Your BORO confirmation code"
+content_path = "./supabase/templates/confirmation.html"
+
 [storage]
 enabled = true
 file_size_limit = "10MiB"

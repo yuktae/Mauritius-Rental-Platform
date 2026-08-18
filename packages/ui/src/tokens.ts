@@ -13,6 +13,7 @@ export type Swatch = {
   step: string;
   value: string;
   note?: string;
+  chosen?: boolean;
 };
 
 export type Ramp = {
@@ -68,33 +69,34 @@ export const statusColors: Swatch[] = [
 ];
 
 /**
- * Candidate accents for the Owner surface.
+ * Accents for the Owner surface. Ink navy is the chosen one.
  *
  * Renter and Owner share every other token and differ only in `--color-accent`,
  * so the distinction stays one deliberate line rather than two themes that
- * drift apart. Both currently resolve to brand orange; nothing changes until a
- * candidate is chosen.
+ * drift apart. The rejected options are kept here because the reasoning is
+ * worth more than the result if this is ever revisited.
  */
 export const ownerAccentCandidates: Swatch[] = [
   {
     step: "Brand orange",
     value: "#f5761c",
-    note: "No distinction. One product, one colour"
+    note: "Renter uses this. Rejected for Owner: no distinction at all"
   },
   {
     step: "Deep teal",
     value: "#0e8e9b",
-    note: "Complement of orange. Reads as tools and trust, and is already the verified colour"
+    note: "Rejected: teal already means verified on badges and QR handover, and an accent that doubles as a status stops the status reading as one"
   },
   {
     step: "Ink navy",
     value: "#1b3a5c",
-    note: "Businesslike and calm. Closest to the original style board"
+    note: "Chosen. Collides with no status colour, suits a management surface rather than a shopping one, and keeps the style board's navy-for-trust intent without reintroducing navy as a second neutral",
+    chosen: true
   },
   {
     step: "Ember",
     value: "#8f3812",
-    note: "Same hue family, darker. The most subtle option"
+    note: "Rejected: too close to the brand, so it reads as a muted or disabled orange button rather than a different surface"
   }
 ];
 
