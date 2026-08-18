@@ -345,6 +345,80 @@ export type Database = {
       [_ in never]: never
     }
     Functions: {
+      admin_set_account_status: {
+        Args: {
+          new_status: Database["public"]["Enums"]["account_status"]
+          reason?: string
+          target_user_id: string
+        }
+        Returns: {
+          account_status: Database["public"]["Enums"]["account_status"]
+          calendar_connected: boolean
+          created_at: string
+          date_of_birth: string | null
+          display_name: string | null
+          email: string
+          email_verified: boolean
+          full_legal_name: string | null
+          id: string
+          id_verification_status: Database["public"]["Enums"]["id_verification_status"]
+          last_used_role: Database["public"]["Enums"]["app_role"] | null
+          location_region: string | null
+          payout_ready: boolean
+          phone_number: string | null
+          phone_verified: boolean
+          preferred_language: string
+          privacy_accepted_at: string | null
+          profile_complete: boolean
+          profile_photo_added: boolean
+          profile_photo_path: string | null
+          terms_accepted_at: string | null
+          updated_at: string
+        }
+        SetofOptions: {
+          from: "*"
+          to: "profiles"
+          isOneToOne: true
+          isSetofReturn: false
+        }
+      }
+      admin_set_id_verification_status: {
+        Args: {
+          new_status: Database["public"]["Enums"]["id_verification_status"]
+          reason?: string
+          target_user_id: string
+        }
+        Returns: {
+          account_status: Database["public"]["Enums"]["account_status"]
+          calendar_connected: boolean
+          created_at: string
+          date_of_birth: string | null
+          display_name: string | null
+          email: string
+          email_verified: boolean
+          full_legal_name: string | null
+          id: string
+          id_verification_status: Database["public"]["Enums"]["id_verification_status"]
+          last_used_role: Database["public"]["Enums"]["app_role"] | null
+          location_region: string | null
+          payout_ready: boolean
+          phone_number: string | null
+          phone_verified: boolean
+          preferred_language: string
+          privacy_accepted_at: string | null
+          profile_complete: boolean
+          profile_photo_added: boolean
+          profile_photo_path: string | null
+          terms_accepted_at: string | null
+          updated_at: string
+        }
+        SetofOptions: {
+          from: "*"
+          to: "profiles"
+          isOneToOne: true
+          isSetofReturn: false
+        }
+      }
       has_role: {
         Args: {
           check_role: Database["public"]["Enums"]["app_role"]
