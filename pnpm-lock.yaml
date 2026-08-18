@@ -142,7 +142,20 @@ importers:
         version: 5.9.3
 
   packages/ui:
+    dependencies:
+      clsx:
+        specifier: 2.1.1
+        version: 2.1.1
+      tailwind-merge:
+        specifier: 3.6.0
+        version: 3.6.0
     devDependencies:
+      '@types/react':
+        specifier: 19.2.18
+        version: 19.2.18
+      react:
+        specifier: 19.2.8
+        version: 19.2.8
       typescript:
         specifier: ^5.9.2
         version: 5.9.3
@@ -648,6 +661,10 @@ packages:
   client-only@0.0.1:
     resolution: {integrity: sha512-IV3Ou0jSMzZrd3pZ48nLkT9DA7Ag1pnPzaiQhpW7c3RbcqqzvzzVu+L8gfqMp/8IM2MQtSiqaCxrrcfu8I8rMA==}
 
+  clsx@2.1.1:
+    resolution: {integrity: sha512-eYm0QWBtUrBWZWG0d386OGAw16Z995PiOVo2B7bjWSbHedGl5e0ZWaq65kOGgUSNesEIDkB9ISbTg/JK9dhCZA==}
+    engines: {node: '>=6'}
+
   cookie@1.1.1:
     resolution: {integrity: sha512-ei8Aos7ja0weRpFzJnEA9UHJ/7XQmqglbRwnf2ATjcB9Wq874VKH9kfjjirM6UhU2/E5fFYadylyhFldcqSidQ==}
     engines: {node: '>=18'}
@@ -840,6 +857,9 @@ packages:
   supabase@2.114.0:
     resolution: {integrity: sha512-JtCR+eDgVs2YtmZl5THdkaTeXex80lax+3V2SXRSuj280SWJPTIKxMLc82iDKjZlqXnt9zrGnJkrWb7DwHGPhQ==}
     hasBin: true
+
+  tailwind-merge@3.6.0:
+    resolution: {integrity: sha512-uxL7qAVQriqRQPAyK3pj66VqskWqoZ37PW94jwOTwNfq/z9oyu1V+eqrZqtR2+fCiXdYOZe/Modt8GtvqNzu+w==}
 
   tailwindcss@4.3.3:
     resolution: {integrity: sha512-gOhV3P7ufE62QDGg1zVaTgCR+EtPv92k2nIhVcVKcLmxT1sUBsQGhnZj175j+MqRt4zLF7ic+sCYjfhxMxj7YQ==}
@@ -1209,6 +1229,8 @@ snapshots:
 
   client-only@0.0.1: {}
 
+  clsx@2.1.1: {}
+
   cookie@1.1.1: {}
 
   csstype@3.2.3: {}
@@ -1391,6 +1413,8 @@ snapshots:
       '@supabase/cli-linux-x64-musl': 2.114.0
       '@supabase/cli-windows-arm64': 2.114.0
       '@supabase/cli-windows-x64': 2.114.0
+
+  tailwind-merge@3.6.0: {}
 
   tailwindcss@4.3.3: {}
 

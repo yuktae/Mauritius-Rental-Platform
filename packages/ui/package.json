@@ -13,6 +13,15 @@
     "test": "echo \"No ui tests configured yet\""
   },
   "devDependencies": {
+    "@types/react": "19.2.18",
+    "react": "19.2.8",
     "typescript": "^5.9.2"
+  },
+  "dependencies": {
+    "clsx": "2.1.1",
+    "tailwind-merge": "3.6.0"
+  },
+  "peerDependencies": {
+    "react": "^19.0.0"
   }
 }
