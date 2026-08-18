@@ -16,6 +16,9 @@ coverage/
 .env.*
 !.env.example
 
+# Vercel
+.vercel/
+
 # Supabase local state
 supabase/.branches/
 supabase/.temp/

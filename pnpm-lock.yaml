@@ -9,10 +9,10 @@ importers:
   .:
     devDependencies:
       supabase:
-        specifier: latest
+        specifier: 2.114.0
         version: 2.114.0
       turbo:
-        specifier: latest
+        specifier: 2.10.10
         version: 2.10.10
       typescript:
         specifier: ^5.9.2
@@ -30,23 +30,23 @@ importers:
         specifier: workspace:*
         version: link:../../packages/ui
       next:
-        specifier: latest
+        specifier: 16.3.1
         version: 16.3.1(@types/node@26.2.0)(react-dom@19.2.8(react@19.2.8))(react@19.2.8)
       react:
-        specifier: latest
+        specifier: 19.2.8
         version: 19.2.8
       react-dom:
-        specifier: latest
+        specifier: 19.2.8
         version: 19.2.8(react@19.2.8)
     devDependencies:
       '@types/node':
-        specifier: latest
+        specifier: 26.2.0
         version: 26.2.0
       '@types/react':
-        specifier: latest
+        specifier: 19.2.18
         version: 19.2.18
       '@types/react-dom':
-        specifier: latest
+        specifier: 19.2.4
         version: 19.2.4(@types/react@19.2.18)
       typescript:
         specifier: ^5.9.2
@@ -64,23 +64,23 @@ importers:
         specifier: workspace:*
         version: link:../../packages/ui
       next:
-        specifier: latest
+        specifier: 16.3.1
         version: 16.3.1(@types/node@26.2.0)(react-dom@19.2.8(react@19.2.8))(react@19.2.8)
       react:
-        specifier: latest
+        specifier: 19.2.8
         version: 19.2.8
       react-dom:
-        specifier: latest
+        specifier: 19.2.8
         version: 19.2.8(react@19.2.8)
     devDependencies:
       '@types/node':
-        specifier: latest
+        specifier: 26.2.0
         version: 26.2.0
       '@types/react':
-        specifier: latest
+        specifier: 19.2.18
         version: 19.2.18
       '@types/react-dom':
-        specifier: latest
+        specifier: 19.2.4
         version: 19.2.4(@types/react@19.2.18)
       typescript:
         specifier: ^5.9.2
@@ -116,7 +116,7 @@ importers:
         specifier: workspace:*
         version: link:../types
       zod:
-        specifier: latest
+        specifier: 4.4.3
         version: 4.4.3
     devDependencies:
       typescript:

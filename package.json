@@ -18,8 +18,8 @@
     "db:types": "supabase gen types typescript --local > packages/database/src/supabase.types.ts"
   },
   "devDependencies": {
-    "supabase": "latest",
-    "turbo": "latest",
+    "supabase": "2.114.0",
+    "turbo": "2.10.10",
     "typescript": "^5.9.2"
   }
 }
