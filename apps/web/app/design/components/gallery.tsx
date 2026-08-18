@@ -60,16 +60,31 @@ function ToastDemo() {
   return (
     <div className="flex flex-wrap gap-2">
       <Button variant="secondary" onClick={() => showToast("Profile saved")}>
-        Success toast
+        Success
       </Button>
       <Button
         variant="secondary"
-        onClick={() => showToast("Something went wrong on our side.", "danger")}
+        onClick={() =>
+          showToast({
+            title: "We couldn't save that",
+            description: "Check your connection and try again.",
+            tone: "danger"
+          })
+        }
       >
-        Error toast
+        Error with detail
       </Button>
-      <Button variant="secondary" onClick={() => showToast("Code sent again", "info")}>
-        Info toast
+      <Button
+        variant="secondary"
+        onClick={() =>
+          showToast({
+            title: "Code sent again",
+            description: "Check your inbox, it can take a minute.",
+            tone: "info"
+          })
+        }
+      >
+        Info with detail
       </Button>
     </div>
   );
@@ -97,9 +112,17 @@ function Gallery() {
   return (
     <main className="mx-auto flex w-full max-w-3xl flex-col gap-12 px-5 py-10 sm:px-8 sm:py-14">
       <header className="flex flex-col gap-3">
-        <a href="/design" className="font-mono text-label text-primary hover:underline">
-          &larr; Design tokens
-        </a>
+        <div className="flex flex-wrap gap-x-4 gap-y-1 font-mono text-label">
+          <a href="/design" className="text-primary hover:underline">
+            &larr; Design tokens
+          </a>
+          <a href="/design/type" className="text-primary hover:underline">
+            Type options
+          </a>
+          <a href="/design/result" className="text-primary hover:underline">
+            Result screens
+          </a>
+        </div>
         <h1 className="text-display font-extrabold">Components</h1>
         <p className="max-w-prose text-ink-muted">
           Every primitive the auth and onboarding screens are assembled from,
@@ -285,7 +308,7 @@ function Gallery() {
         </Banner>
       </Section>
 
-      <Section title="Toast" note="Auto-dismisses, announced politely, bottom-anchored clear of the home indicator.">
+      <Section title="Toast" note="Icon, title, optional detail, and a countdown bar that freezes while you hover, so a toast cannot vanish mid-read. Bottom on a phone, top-right from tablet up.">
         <ToastDemo />
       </Section>
 

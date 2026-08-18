@@ -15,6 +15,11 @@ export { RoleChoiceCard, type RoleChoiceCardProps } from "./role-choice-card";
 export { ConsentCheckbox, type ConsentCheckboxProps } from "./consent-checkbox";
 export { Banner, type BannerProps, type BannerTone } from "./banner";
 export { Skeleton } from "./skeleton";
+export {
+  ResultScreen,
+  type ResultScreenProps,
+  type ResultStatus
+} from "./result-screen";
 export { ProgressSteps, type ProgressStepsProps } from "./progress-steps";
 export { SubmitBar, type SubmitBarProps } from "./submit-bar";
 export {
