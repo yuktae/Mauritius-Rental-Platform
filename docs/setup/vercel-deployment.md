@@ -17,9 +17,9 @@ build environment of the public app.
 
 | Git branch | Vercel environment | Supabase project |
 |---|---|---|
-| `main` | Production | `boro-production` (not created yet) |
-| `preprod` | Preview (staging) | `boro-staging` (not created yet) |
-| any other branch | Preview | `boro-staging` |
+| `main` | Production | `boro-production` (`zpmxomlhbzqrmrzcytqi`) |
+| `preprod` | Preview (staging) | `boro-preprod` (`fewtgrpknfcquaikdnzo`) |
+| any other branch | Preview | `boro-preprod` |
 
 Set this under **Settings > Git > Production Branch = `main`**. The `preprod`
 branch then deploys automatically as a preview with a stable URL.
@@ -51,36 +51,43 @@ from the Supabase project dashboard under **Settings > API**.
 
 | Key | Production | Preview |
 |---|---|---|
-| `NEXT_PUBLIC_SUPABASE_URL` | production project URL | staging project URL |
-| `NEXT_PUBLIC_SUPABASE_ANON_KEY` | production anon key | staging anon key |
+| `NEXT_PUBLIC_SUPABASE_URL` | `https://zpmxomlhbzqrmrzcytqi.supabase.co` | `https://fewtgrpknfcquaikdnzo.supabase.co` |
+| `NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY` | production publishable key | preprod publishable key |
 | `BORO_ENV` | `production` | `staging` |
 
 ### `boro-admin`
 
+Everything above, plus:
+
 | Key | Production | Preview |
 |---|---|---|
-| `NEXT_PUBLIC_SUPABASE_URL` | production project URL | staging project URL |
-| `NEXT_PUBLIC_SUPABASE_ANON_KEY` | production anon key | staging anon key |
-| `SUPABASE_SERVICE_ROLE_KEY` | production service role key | staging service role key |
-| `BORO_ENV` | `production` | `staging` |
+| `SUPABASE_SECRET_KEY` | production secret key | preprod secret key |
 
-Rules for `SUPABASE_SERVICE_ROLE_KEY`:
+All of these are already set. Retrieve values with
+`pnpm exec supabase projects api-keys --project-ref <ref>`.
+
+Rules for `SUPABASE_SECRET_KEY`:
 
 - It belongs to the `boro-admin` project only. Never add it to `boro-web`.
 - Never rename it to `NEXT_PUBLIC_*`, and never read it from a Client Component.
   It bypasses every RLS policy in the database.
 - Mark it as **Sensitive** in Vercel so it cannot be read back from the dashboard.
 
-## Blocked On Supabase
+## Supabase Projects
 
-The hosted Supabase projects do not exist yet. Until `boro-staging` and
-`boro-production` are created, the environment variables above have no real
-values, and the local URL in `.env` (a `192.168.x.x` LAN address) is unreachable
-from Vercel's build and runtime.
+Both hosted projects exist and are wired into Vercel:
 
-This does not block the first deploy: both apps are currently fully static and do
-not call Supabase at all. Deploy now to confirm the pipeline, then fill in the
-environment variables when the hosted projects exist and the auth code lands.
+| Project | Ref | Region | Postgres | Used by |
+|---|---|---|---|---|
+| `boro-preprod` | `fewtgrpknfcquaikdnzo` | eu-west-1 | 17.6.1 | Vercel Preview |
+| `boro-production` | `zpmxomlhbzqrmrzcytqi` | eu-west-1 | 17.6.1 | Vercel Production |
+
+Local development runs the same Postgres major version (17), set in
+`supabase/config.toml`.
+
+Note that setting the environment variables does not by itself make the apps
+talk to Supabase. `@supabase/supabase-js` is not installed yet and no code
+creates a client, so both apps are still fully static.
 
 ## Protect The Admin Dashboard
 
