@@ -36,3 +36,12 @@ jobs:
 
       - name: Build
         run: pnpm -r build
+        env:
+          # NEXT_PUBLIC_* values are inlined into the browser bundle at build
+          # time, so a build with none produces a client that cannot reach
+          # Supabase. CI only proves the workspace compiles and nothing it
+          # builds is deployed, so placeholders are the right thing here. Real
+          # values live on the Vercel projects.
+          BORO_ENV: ci
+          NEXT_PUBLIC_SUPABASE_URL: http://127.0.0.1:54321
+          NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY: sb_publishable_ci_placeholder

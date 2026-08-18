@@ -15,8 +15,12 @@ import type { Database } from "./supabase.types";
  * against the auth server, so its contents can be spoofed.
  */
 export async function createBoroServerClient() {
-  const { url, publishableKey } = readSupabasePublicConfig();
+  // cookies() first, deliberately. Awaiting it is what marks the route dynamic,
+  // so Next stops trying to prerender it. Reading env before this point means a
+  // missing variable throws during prerender and fails the entire build, rather
+  // than failing the one request that is actually misconfigured.
   const cookieStore = await cookies();
+  const { url, publishableKey } = readSupabasePublicConfig();
 
   return createServerClient<Database>(url, publishableKey, {
     cookies: {

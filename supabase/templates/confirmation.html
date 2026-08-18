@@ -1,36 +1,119 @@
 <!--
   BORO email confirmation.
 
-  Uses {{ .Token }} rather than {{ .ConfirmationURL }} because Phase 1 verifies
-  with a six-digit code typed into the app, not a magic link. A link would open
-  a new browser tab and strand the half-finished signup in the original one.
+  Renders {{ .Token }} rather than {{ .ConfirmationURL }}: Phase 1 verifies with
+  a six-digit code typed into the app, not a magic link. A link would open a new
+  tab and strand the half-finished signup in the original one.
 
-  Styles are inline: email clients strip <style> blocks, and several ignore
-  anything but inline attributes.
+  Email is not the web. The rules this file follows:
+    - Tables for layout, because Outlook renders with Word's engine and ignores
+      flex and grid entirely.
+    - Every style inline. Most clients strip <style> blocks.
+    - No images and no SVG. Gmail strips SVG, and images are blocked by default
+      in many clients, so the wordmark and the code are live text.
+    - Plus Jakarta Sans is named first but will not load in most clients, so the
+      fallback stack is what actually renders. That is fine: the code has to be
+      readable, not branded.
+    - border-radius is ignored by Outlook. It degrades to square corners, which
+      is acceptable; nothing depends on it.
 -->
-<div style="font-family: -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; max-width: 480px; margin: 0 auto; padding: 32px 24px; color: #221e1a;">
-  <p style="margin: 0 0 24px; font-size: 20px; font-weight: 800; color: #f5761c; letter-spacing: -0.02em;">
-    BORO
-  </p>
+<table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="margin:0; padding:0; background-color:#f8f2e9;">
+  <tr>
+    <td align="center" style="padding:32px 16px;">
 
-  <h1 style="margin: 0 0 12px; font-size: 22px; font-weight: 700; letter-spacing: -0.02em;">
-    Confirm your email address
-  </h1>
+      <!-- card -->
+      <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="max-width:520px; background-color:#ffffff; border-radius:20px; overflow:hidden;">
 
-  <p style="margin: 0 0 24px; font-size: 15px; line-height: 1.6; color: #574e45;">
-    Enter this code in the app to finish creating your account.
-  </p>
+        <!-- brand bar -->
+        <tr>
+          <td style="height:6px; background-color:#f5761c; line-height:6px; font-size:0;">&nbsp;</td>
+        </tr>
 
-  <p style="margin: 0 0 24px; padding: 18px 24px; background: #f8f2e9; border-radius: 14px; text-align: center; font-size: 32px; font-weight: 700; letter-spacing: 10px; font-family: ui-monospace, 'Cascadia Mono', Menlo, Consolas, monospace;">
-    {{ .Token }}
-  </p>
+        <tr>
+          <td style="padding:36px 40px 0 40px;">
+            <p style="margin:0; font-family:'Plus Jakarta Sans',-apple-system,'Segoe UI',Roboto,Helvetica,Arial,sans-serif; font-size:22px; font-weight:800; letter-spacing:-0.4px; color:#f5761c;">
+              BORO
+            </p>
+          </td>
+        </tr>
 
-  <p style="margin: 0 0 8px; font-size: 14px; line-height: 1.6; color: #776c60;">
-    The code expires in one hour.
-  </p>
+        <tr>
+          <td style="padding:28px 40px 0 40px;">
+            <h1 style="margin:0; font-family:'Plus Jakarta Sans',-apple-system,'Segoe UI',Roboto,Helvetica,Arial,sans-serif; font-size:28px; line-height:1.2; font-weight:800; letter-spacing:-0.7px; color:#221e1a;">
+              Confirm your<br />email address
+            </h1>
+          </td>
+        </tr>
 
-  <p style="margin: 0; font-size: 14px; line-height: 1.6; color: #776c60;">
-    If you didn&rsquo;t try to create a BORO account, you can ignore this email
-    and nothing will happen.
-  </p>
-</div>
+        <tr>
+          <td style="padding:16px 40px 0 40px;">
+            <p style="margin:0; font-family:'Plus Jakarta Sans',-apple-system,'Segoe UI',Roboto,Helvetica,Arial,sans-serif; font-size:16px; line-height:1.6; color:#574e45;">
+              You&rsquo;re one step from your BORO account. Enter this code in the
+              app to finish signing up.
+            </p>
+          </td>
+        </tr>
+
+        <!-- the code -->
+        <tr>
+          <td style="padding:28px 40px 0 40px;">
+            <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="background-color:#f8f2e9; border-radius:16px;">
+              <tr>
+                <td align="center" style="padding:26px 16px;">
+                  <p style="margin:0; font-family:'SF Mono',Consolas,'Courier New',monospace; font-size:38px; line-height:1.1; font-weight:700; letter-spacing:10px; text-indent:10px; color:#221e1a;">
+                    {{ .Token }}
+                  </p>
+                </td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+
+        <tr>
+          <td align="center" style="padding:16px 40px 0 40px;">
+            <p style="margin:0; font-family:'Plus Jakarta Sans',-apple-system,'Segoe UI',Roboto,Helvetica,Arial,sans-serif; font-size:14px; line-height:1.5; color:#776c60;">
+              This code expires in 60 minutes.
+            </p>
+          </td>
+        </tr>
+
+        <!-- divider -->
+        <tr>
+          <td style="padding:32px 40px 0 40px;">
+            <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0">
+              <tr>
+                <td style="height:1px; background-color:#e3d7c6; line-height:1px; font-size:0;">&nbsp;</td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+
+        <tr>
+          <td style="padding:24px 40px 36px 40px;">
+            <p style="margin:0; font-family:'Plus Jakarta Sans',-apple-system,'Segoe UI',Roboto,Helvetica,Arial,sans-serif; font-size:14px; line-height:1.6; color:#776c60;">
+              Didn&rsquo;t try to create a BORO account? You can ignore this email.
+              Nothing is created until this code is entered, and we&rsquo;ll never
+              ask you for it by phone or message.
+            </p>
+          </td>
+        </tr>
+
+      </table>
+
+      <!-- footer, outside the card -->
+      <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="max-width:520px;">
+        <tr>
+          <td align="center" style="padding:24px 24px 0 24px;">
+            <p style="margin:0 0 6px 0; font-family:'Plus Jakarta Sans',-apple-system,'Segoe UI',Roboto,Helvetica,Arial,sans-serif; font-size:14px; font-weight:600; color:#574e45;">
+              Rent what you need, list what you own.
+            </p>
+            <p style="margin:0; font-family:'Plus Jakarta Sans',-apple-system,'Segoe UI',Roboto,Helvetica,Arial,sans-serif; font-size:13px; line-height:1.5; color:#9e9182;">
+              BORO &middot; Mauritius
+            </p>
+          </td>
+        </tr>
+      </table>
+
+    </td>
+  </tr>
+</table>
