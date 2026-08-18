@@ -4,7 +4,10 @@
   "private": true,
   "type": "module",
   "exports": {
-    ".": "./src/index.ts"
+    ".": "./src/index.ts",
+    "./browser": "./src/browser.ts",
+    "./server": "./src/server.ts",
+    "./middleware": "./src/middleware.ts"
   },
   "scripts": {
     "lint": "echo \"No database lint configured yet\"",
@@ -12,6 +15,15 @@
     "test": "echo \"No database tests configured yet\""
   },
   "devDependencies": {
-    "typescript": "^5.9.2"
+    "typescript": "^5.9.2",
+    "next": "16.3.1",
+    "react": "19.2.8"
+  },
+  "dependencies": {
+    "@supabase/ssr": "0.12.4",
+    "@supabase/supabase-js": "2.112.3"
+  },
+  "peerDependencies": {
+    "next": "^16.0.0"
   }
 }

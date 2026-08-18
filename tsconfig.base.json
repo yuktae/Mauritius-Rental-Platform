@@ -14,6 +14,7 @@
     "paths": {
       "@boro/config": ["packages/config/src"],
       "@boro/database": ["packages/database/src"],
+      "@boro/database/*": ["packages/database/src/*"],
       "@boro/types": ["packages/types/src"],
       "@boro/ui": ["packages/ui/src"],
       "@boro/validators": ["packages/validators/src"]
