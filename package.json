@@ -15,7 +15,8 @@
     "db:stop": "supabase stop",
     "db:reset": "supabase db reset",
     "db:migrate": "supabase migration up",
-    "db:types": "supabase gen types typescript --local > packages/database/src/supabase.types.ts"
+    "db:types": "supabase gen types typescript --local > packages/database/src/supabase.types.ts",
+    "db:test": "supabase db reset && docker exec -i supabase_db_boro-local psql -U postgres -d postgres -q < supabase/tests/access-control.sql && docker exec -i supabase_db_boro-local psql -U postgres -d postgres -q < supabase/tests/auth-prerequisites.sql"
   },
   "devDependencies": {
     "supabase": "2.114.0",
